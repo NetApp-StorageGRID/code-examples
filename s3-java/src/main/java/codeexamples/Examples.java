@@ -31,7 +31,13 @@ public class Examples {
 
         final String profile = "my_profile";
         final String address = "https://s3.mycompany.com:8082";
+        
+        /*
+         * Disable the certificate checks, for dev environments only
+         */
+      	//System.setProperty(SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY, "true");
 
+            
         final AWSCredentialsProvider credentials = new ProfileCredentialsProvider(profile);
         final S3ClientOptions options = new S3ClientOptions().withPathStyleAccess(true);
 
